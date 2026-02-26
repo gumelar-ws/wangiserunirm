@@ -31,9 +31,14 @@
     </script>
 
     <style>
-        html, body {
+     body {
             overflow-x: hidden;
         }
+        html {
+             overflow-x: hidden;
+    -webkit-text-size-adjust: 100%; /* Mencegah perubahan ukuran teks otomatis di iPhone */
+    text-size-adjust: 100%;
+}
         .glass {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
