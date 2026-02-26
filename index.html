@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Rumah Makan Wangi Seruni | Cita Rasa Otentik Bandung</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
@@ -17,9 +15,9 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#164e63', // Deep Emerald
-                        secondary: '#fef3c7', // Soft Cream
-                        accent: '#d97706', // Warm Amber
+                        primary: '#164e63', 
+                        secondary: '#fef3c7', 
+                        accent: '#d97706', 
                     },
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
@@ -31,17 +29,13 @@
     </script>
 
     <style>
-     body {
-        width: 100%;
-        max-width: 100vw;
-        overflow-x: hidden;
-        position: relative;
+        /* Mencegah elemen keluar jalur secara global */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
         }
-        html {
-             overflow-x: hidden;
-            -webkit-text-size-adjust: 100%; /* Mencegah perubahan ukuran teks otomatis di iPhone */
-            text-size-adjust: 100%;
-        }
+        
         .glass {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
@@ -64,7 +58,7 @@
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 " x-data="{ loading: true, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50) ? true : false" x-init="setTimeout(() => loading = false, 1500)">
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden" x-data="{ loading: true, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50) ? true : false" x-init="setTimeout(() => loading = false, 1500)">
 
     <div x-show="loading" class="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center">
         <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
@@ -75,9 +69,9 @@
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
     </a>
 
-    <nav :class="scrolled ? 'glass py-3 shadow-lg' : 'bg-transparent py-6'" class="fixed w-full z-40 transition-all duration-500 px-6 lg:px-20">
+    <nav :class="scrolled ? 'glass py-3 shadow-lg' : 'bg-transparent py-6'" class="fixed w-full z-40 transition-all duration-500 px-4 lg:px-20">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#" class="font-serif text-2xl font-bold tracking-tight transition-colors" :class="scrolled ? 'text-primary' : 'text-white'">
+            <a href="#" class="font-serif text-xl md:text-2xl font-bold tracking-tight transition-colors" :class="scrolled ? 'text-primary' : 'text-white'">
                 Wangi Seruni
             </a>
             <div class="hidden md:flex space-x-8 font-medium" :class="scrolled ? 'text-slate-700' : 'text-white/90'">
@@ -85,62 +79,62 @@
                 <a href="#menu" class="hover:text-accent transition-colors">Menu</a>
                 <a href="#lokasi" class="hover:text-accent transition-colors">Lokasi</a>
             </div>
-            <button class="bg-accent hover:bg-amber-600 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-lg active:scale-95">
+            <button class="bg-accent hover:bg-amber-600 text-white px-5 py-2 md:px-6 md:py-2.5 rounded-full text-sm md:text-base font-semibold transition-all shadow-lg active:scale-95">
                 Reservasi
             </button>
         </div>
     </nav>
 
-    <section class="relative h-screen flex items-center justify-center hero-gradient px-6">
+    <section class="relative h-screen flex items-center justify-center hero-gradient px-6 overflow-hidden">
         <div class="text-center text-white z-10" data-aos="fade-up" data-aos-duration="1500">
             <div class="flex items-center justify-center gap-2 mb-4">
-                <span class="bg-white/20 backdrop-blur-md px-4 py-1 rounded-full text-sm font-semibold tracking-widest uppercase">Bandung Wetan</span>
+                <span class="bg-white/20 backdrop-blur-md px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase">Bandung Wetan</span>
             </div>
-            <h1 class="font-serif text-5xl md:text-8xl mb-6 leading-tight">Cita Rasa Tradisi<br><span class="italic text-secondary">di Jantung Kota.</span></h1>
-            <div class="flex flex-wrap justify-center items-center gap-6 mb-10 text-lg">
+            <h1 class="font-serif text-4xl md:text-8xl mb-6 leading-tight">Cita Rasa Tradisi<br><span class="italic text-secondary">di Jantung Kota.</span></h1>
+            <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6 mb-10 text-base md:text-lg">
                 <div class="flex items-center">
-                    <span class="text-yellow-400 mr-2 text-2xl">★</span>
+                    <span class="text-yellow-400 mr-2 text-xl">★</span>
                     <span class="font-bold">4.2</span>
-                    <span class="text-white/70 ml-1">(1.165+ Ulasan)</span>
+                    <span class="text-white/70 ml-1 text-sm md:text-base">(1.165+)</span>
                 </div>
                 <div class="h-1.5 w-1.5 rounded-full bg-white/50 hidden md:block"></div>
-                <div class="font-medium tracking-wide">Rp 50rb — 75rb / org</div>
+                <div class="font-medium tracking-wide text-sm md:text-base">Rp 50rb — 75rb / org</div>
             </div>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#menu" class="bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-secondary transition-all shadow-2xl">Lihat Menu Populer</a>
-                <a href="#lokasi" class="bg-transparent border-2 border-white/50 backdrop-blur-sm text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">Kunjungi Kami</a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#menu" class="w-full sm:w-auto bg-white text-primary px-8 py-3.5 rounded-xl font-bold text-base hover:bg-secondary transition-all shadow-2xl">Lihat Menu</a>
+                <a href="#lokasi" class="w-full sm:w-auto bg-transparent border-2 border-white/50 backdrop-blur-sm text-white px-8 py-3.5 rounded-xl font-bold text-base hover:bg-white/10 transition-all">Kunjungi Kami</a>
             </div>
         </div>
     </section>
 
-    <section id="tentang" class="py-24 px-6 lg:px-20 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-            <div class="relative" data-aos="fade-right">
-                <div class="absolute -top-10 -left-10 w-40 h-40 bg-secondary rounded-full -z-10 opacity-50"></div>
-                <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&q=80&w=800" alt="Authentic Food" class="rounded-3xl shadow-2xl w-full object-cover h-[500px] hover:scale-[1.02] transition-transform duration-700">
-                <div class="absolute -bottom-6 -right-6 glass p-6 rounded-2xl shadow-xl hidden md:block">
-                    <p class="text-primary font-bold text-3xl">1.165+</p>
-                    <p class="text-slate-500 text-sm font-medium uppercase tracking-tighter">Pelanggan Puas</p>
+    <section id="tentang" class="py-16 md:py-24 px-6 lg:px-20 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div class="relative" data-aos="fade-up">
+                <div class="absolute -top-5 -left-5 w-24 h-24 bg-secondary rounded-full -z-10 opacity-50"></div>
+                <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&q=80&w=800" alt="Authentic Food" class="rounded-3xl shadow-2xl w-full object-cover h-[350px] md:h-[500px] hover:scale-[1.02] transition-transform duration-700">
+                <div class="absolute -bottom-4 -right-4 glass p-4 md:p-6 rounded-2xl shadow-xl hidden sm:block">
+                    <p class="text-primary font-bold text-2xl md:text-3xl">1.165+</p>
+                    <p class="text-slate-500 text-xs font-medium uppercase tracking-tighter">Pelanggan Puas</p>
                 </div>
             </div>
-            <div data-aos="fade-left">
-                <h2 class="text-primary font-serif text-4xl md:text-5xl mb-6">Warisan Rasa Sunda yang Melegenda</h2>
-                <p class="text-slate-600 text-lg leading-relaxed mb-8">
-                    Di **Rumah Makan Wangi Seruni**, kami percaya bahwa makanan adalah jembatan memori. Menghadirkan **Ayam Goreng Serundeng** yang empuk dan berempah, kami telah menjadi destinasi favorit di Bandung bagi mereka yang merindukan masakan rumah dengan kualitas premium. 
+            <div data-aos="fade-up">
+                <h2 class="text-primary font-serif text-3xl md:text-5xl mb-6">Warisan Rasa Sunda yang Melegenda</h2>
+                <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-8">
+                    Di **Rumah Makan Wangi Seruni**, kami menghadirkan **Ayam Goreng Serundeng** yang empuk dan berempah, menjadi destinasi favorit di Bandung bagi pecinta masakan rumah kualitas premium. 
                 </p>
-                <div class="grid grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                     <div class="flex items-start gap-3">
-                        <div class="bg-primary/10 p-2 rounded-lg text-primary">✔</div>
+                        <div class="bg-primary/10 p-2 rounded-lg text-primary text-sm">✔</div>
                         <div>
-                            <h4 class="font-bold">Bumbu Rempah</h4>
-                            <p class="text-sm text-slate-500">Meresap hingga ke tulang.</p>
+                            <h4 class="font-bold text-sm md:text-base">Bumbu Rempah</h4>
+                            <p class="text-xs md:text-sm text-slate-500">Meresap hingga ke tulang.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-3">
-                        <div class="bg-primary/10 p-2 rounded-lg text-primary">✔</div>
+                        <div class="bg-primary/10 p-2 rounded-lg text-primary text-sm">✔</div>
                         <div>
-                            <h4 class="font-bold">Selalu Fresh</h4>
-                            <p class="text-sm text-slate-500">Dimasak setiap hari.</p>
+                            <h4 class="font-bold text-sm md:text-base">Selalu Fresh</h4>
+                            <p class="text-xs md:text-sm text-slate-500">Dimasak setiap hari.</p>
                         </div>
                     </div>
                 </div>
@@ -148,120 +142,119 @@
         </div>
     </section>
 
-    <section id="menu" class="py-24 px-6 lg:px-20 bg-slate-50">
+    <section id="menu" class="py-16 md:py-24 px-6 lg:px-20 bg-slate-50">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="font-serif text-4xl md:text-5xl text-primary mb-4">Menu Paling Dicari</h2>
-                <div class="h-1 w-20 bg-accent mx-auto"></div>
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="font-serif text-3xl md:text-5xl text-primary mb-4">Menu Populer</h2>
+                <div class="h-1 w-16 bg-accent mx-auto"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="group bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
-                    <div class="overflow-hidden rounded-2xl mb-4 h-48">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <div class="group bg-white rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all" data-aos="fade-up">
+                    <div class="overflow-hidden rounded-2xl mb-4 h-40 md:h-48">
                         <img src="https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <h3 class="font-bold text-xl mb-1">Ayam Serundeng</h3>
-                    <p class="text-slate-500 text-sm mb-4">Ayam goreng empuk dengan taburan serundeng gurih khas Seruni.</p>
+                    <h3 class="font-bold text-lg md:text-xl mb-1">Ayam Serundeng</h3>
+                    <p class="text-slate-500 text-xs md:text-sm mb-4">Ayam goreng empuk dengan taburan serundeng gurih.</p>
                     <div class="flex justify-between items-center border-t pt-4">
-                        <span class="text-primary font-bold">Populer</span>
-                        <span class="text-accent font-bold">⭐ 4.9</span>
+                        <span class="text-primary font-bold text-sm">Populer</span>
+                        <span class="text-accent font-bold text-sm">⭐ 4.9</span>
                     </div>
                 </div>
-                <div class="group bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-                    <div class="overflow-hidden rounded-2xl mb-4 h-48">
+                <div class="group bg-white rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="overflow-hidden rounded-2xl mb-4 h-40 md:h-48">
                         <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <h3 class="font-bold text-xl mb-1">Soto Wangi</h3>
-                    <p class="text-slate-500 text-sm mb-4">Kuah bening kaya rempah dengan potongan daging pilihan.</p>
+                    <h3 class="font-bold text-lg md:text-xl mb-1">Soto Wangi</h3>
+                    <p class="text-slate-500 text-xs md:text-sm mb-4">Kuah bening kaya rempah dengan daging pilihan.</p>
                     <div class="flex justify-between items-center border-t pt-4">
-                        <span class="text-primary font-bold">Signature</span>
-                        <span class="text-accent font-bold">⭐ 4.8</span>
+                        <span class="text-primary font-bold text-sm">Signature</span>
+                        <span class="text-accent font-bold text-sm">⭐ 4.8</span>
                     </div>
                 </div>
-                <div class="group bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
-                    <div class="overflow-hidden rounded-2xl mb-4 h-48">
+                <div class="group bg-white rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="overflow-hidden rounded-2xl mb-4 h-40 md:h-48">
                         <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <h3 class="font-bold text-xl mb-1">Tumis Kangkung</h3>
-                    <p class="text-slate-500 text-sm mb-4">Sayuran segar dimasak dengan api besar & terasi premium.</p>
+                    <h3 class="font-bold text-lg md:text-xl mb-1">Tumis Kangkung</h3>
+                    <p class="text-slate-500 text-xs md:text-sm mb-4">Sayuran segar dimasak dengan api besar.</p>
                     <div class="flex justify-between items-center border-t pt-4">
-                        <span class="text-primary font-bold">Favorit</span>
-                        <span class="text-accent font-bold">⭐ 4.7</span>
+                        <span class="text-primary font-bold text-sm">Favorit</span>
+                        <span class="text-accent font-bold text-sm">⭐ 4.7</span>
                     </div>
                 </div>
-                <div class="group bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
-                    <div class="overflow-hidden rounded-2xl mb-4 h-48">
+                <div class="group bg-white rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <div class="overflow-hidden rounded-2xl mb-4 h-40 md:h-48">
                         <img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <h3 class="font-bold text-xl mb-1">Es Cingcau Gula Merah</h3>
-                    <p class="text-slate-500 text-sm mb-4">Pelepas dahaga sempurna dengan gula merah asli asli.</p>
+                    <h3 class="font-bold text-lg md:text-xl mb-1">Es Cingcau</h3>
+                    <p class="text-slate-500 text-xs md:text-sm mb-4">Pelepas dahaga dengan gula merah asli.</p>
                     <div class="flex justify-between items-center border-t pt-4">
-                        <span class="text-primary font-bold">Segar</span>
-                        <span class="text-accent font-bold">⭐ 4.9</span>
+                        <span class="text-primary font-bold text-sm">Segar</span>
+                        <span class="text-accent font-bold text-sm">⭐ 4.9</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 bg-primary text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-accent opacity-10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+    <section class="py-16 bg-primary text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10 px-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center">
                 <div data-aos="zoom-in">
-                    <div class="text-4xl md:text-6xl font-serif text-secondary mb-2">4.2</div>
-                    <p class="uppercase tracking-widest text-sm opacity-80">Rating Google</p>
+                    <div class="text-3xl md:text-5xl font-serif text-secondary mb-1">4.2</div>
+                    <p class="uppercase tracking-widest text-[10px] md:text-xs opacity-80">Rating Google</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="100">
-                    <div class="text-4xl md:text-6xl font-serif text-secondary mb-2">1K+</div>
-                    <p class="uppercase tracking-widest text-sm opacity-80">Review Positif</p>
+                    <div class="text-3xl md:text-5xl font-serif text-secondary mb-1">1K+</div>
+                    <p class="uppercase tracking-widest text-[10px] md:text-xs opacity-80">Review Positif</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="200">
-                    <div class="text-4xl md:text-6xl font-serif text-secondary mb-2">100%</div>
-                    <p class="uppercase tracking-widest text-sm opacity-80">Bahan Alami</p>
+                    <div class="text-3xl md:text-5xl font-serif text-secondary mb-1">100%</div>
+                    <p class="uppercase tracking-widest text-[10px] md:text-xs opacity-80">Bahan Alami</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="300">
-                    <div class="text-4xl md:text-6xl font-serif text-secondary mb-2">Bandung</div>
-                    <p class="uppercase tracking-widest text-sm opacity-80">Lokasi Strategis</p>
+                    <div class="text-3xl md:text-5xl font-serif text-secondary mb-1">BDG</div>
+                    <p class="uppercase tracking-widest text-[10px] md:text-xs opacity-80">Lokasi Strategis</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 lg:px-20 bg-white">
+    <section class="py-16 md:py-24 px-6 lg:px-20 bg-white">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="font-serif text-4xl text-primary mb-2">Kata Mereka</h2>
-                <p class="text-slate-500">Alasan kenapa pelanggan selalu kembali lagi.</p>
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl text-primary mb-2">Kata Mereka</h2>
+                <p class="text-slate-500 text-sm">Alasan pelanggan selalu kembali.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 italic" data-aos="fade-up">
-                    <p class="mb-6 text-slate-700">"Ayamnya beneran empuk dan bumbu serundengnya beda banget sama tempat lain. Harus coba!"</p>
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+                <div class="p-6 md:p-8 rounded-3xl bg-slate-50 border border-slate-100 italic" data-aos="fade-up">
+                    <p class="mb-6 text-slate-700 text-sm md:text-base">"Ayamnya beneran empuk dan bumbu serundengnya beda banget."</p>
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold">R</div>
+                        <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-sm">R</div>
                         <div>
-                            <h4 class="font-bold not-italic">Rizky Ramadhan</h4>
-                            <p class="text-xs text-slate-400 not-italic uppercase font-semibold">Local Guide</p>
+                            <h4 class="font-bold not-italic text-sm">Rizky Ramadhan</h4>
+                            <p class="text-[10px] text-slate-400 not-italic uppercase font-semibold">Local Guide</p>
                         </div>
                     </div>
                 </div>
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 italic scale-105 shadow-xl z-10" data-aos="fade-up" data-aos-delay="100">
-                    <p class="mb-6 text-slate-700">"Walaupun antri, tapi worth it banget. Suasananya ramai khas Bandung dan pelayanannya tetap ramah."</p>
+                <div class="p-6 md:p-8 rounded-3xl bg-slate-50 border border-slate-100 italic shadow-lg z-10" data-aos="fade-up" data-aos-delay="100">
+                    <p class="mb-6 text-slate-700 text-sm md:text-base">"Walaupun antri, tapi worth it banget. Pelayanannya tetap ramah."</p>
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold">S</div>
+                        <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-sm">S</div>
                         <div>
-                            <h4 class="font-bold not-italic">Siti Sarah</h4>
-                            <p class="text-xs text-slate-400 not-italic uppercase font-semibold">Food Enthusiast</p>
+                            <h4 class="font-bold not-italic text-sm">Siti Sarah</h4>
+                            <p class="text-[10px] text-slate-400 not-italic uppercase font-semibold">Food Enthusiast</p>
                         </div>
                     </div>
                 </div>
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 italic" data-aos="fade-up" data-aos-delay="200">
-                    <p class="mb-6 text-slate-700">"Cingcau gula merahnya juara! Pas banget buat nutup makan siang yang berat."</p>
+                <div class="p-6 md:p-8 rounded-3xl bg-slate-50 border border-slate-100 italic" data-aos="fade-up" data-aos-delay="200">
+                    <p class="mb-6 text-slate-700 text-sm md:text-base">"Cingcau gula merahnya juara! Pas buat nutup makan siang."</p>
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold">A</div>
+                        <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-sm">A</div>
                         <div>
-                            <h4 class="font-bold not-italic">Andini Putri</h4>
-                            <p class="text-xs text-slate-400 not-italic uppercase font-semibold">Pelanggan Tetap</p>
+                            <h4 class="font-bold not-italic text-sm">Andini Putri</h4>
+                            <p class="text-[10px] text-slate-400 not-italic uppercase font-semibold">Pelanggan Tetap</p>
                         </div>
                     </div>
                 </div>
@@ -269,60 +262,53 @@
         </div>
     </section>
 
-    <section id="lokasi" class="py-24 px-6 lg:px-20 bg-secondary/30">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
-            <div data-aos="fade-right">
-                <h2 class="font-serif text-4xl text-primary mb-8">Kunjungi Kami</h2>
+    <section id="lokasi" class="py-16 md:py-24 px-6 lg:px-20 bg-secondary/30 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10">
+            <div data-aos="fade-up">
+                <h2 class="font-serif text-3xl text-primary mb-8">Kunjungi Kami</h2>
                 <div class="space-y-6">
                     <div class="flex items-start gap-4">
-                        <div class="text-accent text-2xl">📍</div>
+                        <div class="text-accent text-xl">📍</div>
                         <div>
-                            <h4 class="font-bold text-lg">Alamat</h4>
-                            <p class="text-slate-600">Jl. Cimanuk No.42, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115</p>
+                            <h4 class="font-bold text-base md:text-lg">Alamat</h4>
+                            <p class="text-slate-600 text-sm md:text-base">Jl. Cimanuk No.42, Citarum, Bandung Wetan</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <div class="text-accent text-2xl">⏰</div>
+                        <div class="text-accent text-xl">⏰</div>
                         <div>
-                            <h4 class="font-bold text-lg">Jam Operasional</h4>
-                            <p class="text-slate-600">Setiap Hari: 11.00 WIB — Selesai</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="text-accent text-2xl">🍽️</div>
-                        <div>
-                            <h4 class="font-bold text-lg">Layanan</h4>
-                            <p class="text-slate-600">Makan di tempat • Bawa pulang • Pesan antar</p>
+                            <h4 class="font-bold text-base md:text-lg">Jam Operasional</h4>
+                            <p class="text-slate-600 text-sm md:text-base">Setiap Hari: 11.00 WIB — Selesai</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="rounded-3xl overflow-hidden shadow-2xl h-[400px] grayscale hover:grayscale-0 transition-all duration-700" data-aos="fade-left">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9123456789!2d107.618!3d-6.903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTQnMTIuMCJTIDEwN8KwMzcnMDQuOCJF!5e0!3m2!1sid!2sid!4v123456789" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="rounded-3xl overflow-hidden shadow-2xl h-[300px] md:h-[400px]" data-aos="fade-up">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.835465366838!2d107.6171243!3d-6.9102606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e64906f236e7%3A0x7e5b66d48375e2f!2sJl.%20Cimanuk%20No.42%2C%20Citarum%2C%20Kec.%20Bandung%20Wetan%2C%20Kota%20Bandung!5e0!3m2!1sid!2sid!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
-    <section class="py-20 px-6">
-        <div class="max-w-5xl mx-auto bg-primary rounded-[3rem] p-12 text-center text-white relative overflow-hidden shadow-2xl" data-aos="zoom-in">
+    <section class="py-16 px-6">
+        <div class="max-w-5xl mx-auto bg-primary rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-12 text-center text-white relative overflow-hidden shadow-2xl" data-aos="zoom-in">
             <div class="relative z-10">
-                <h2 class="font-serif text-4xl md:text-5xl mb-6">Siap menikmati cita rasa khas<br>Wangi Seruni?</h2>
-                <p class="text-white/70 mb-10 text-lg max-w-2xl mx-auto">Jangan sampai kehabisan menu populer kami. Pesan tempat sekarang atau pesan via online!</p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <button class="bg-accent hover:bg-amber-600 text-white px-10 py-4 rounded-2xl font-bold transition-all shadow-xl">Reservasi Sekarang</button>
-                    <button class="bg-white text-primary hover:bg-secondary px-10 py-4 rounded-2xl font-bold transition-all shadow-xl">Lihat Menu Digital</button>
+                <h2 class="font-serif text-3xl md:text-5xl mb-6">Nikmati Cita Rasa<br>Wangi Seruni</h2>
+                <p class="text-white/70 mb-8 text-sm md:text-lg max-w-2xl mx-auto">Jangan sampai kehabisan menu populer kami. Pesan tempat sekarang!</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button class="bg-accent hover:bg-amber-600 text-white px-8 py-3.5 rounded-2xl font-bold transition-all text-sm md:text-base">Reservasi Sekarang</button>
+                    <button class="bg-white text-primary hover:bg-secondary px-8 py-3.5 rounded-2xl font-bold transition-all text-sm md:text-base">Menu Digital</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 px-6 lg:px-20 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+    <footer class="py-10 px-6 lg:px-20 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
             <div>
-                <h3 class="font-serif text-2xl text-primary font-bold mb-2">Wangi Seruni</h3>
-                <p class="text-slate-500 text-sm">© 2026 Rumah Makan Wangi Seruni Bandung. Semua Hak Dilindungi.</p>
+                <h3 class="font-serif text-xl text-primary font-bold mb-1">Wangi Seruni</h3>
+                <p class="text-slate-500 text-xs">© 2026 Rumah Makan Wangi Seruni Bandung.</p>
             </div>
-            <div class="flex space-x-6">
+            <div class="flex space-x-6 text-xs md:text-sm">
                 <a href="#" class="text-slate-400 hover:text-primary transition-colors">Instagram</a>
                 <a href="#" class="text-slate-400 hover:text-primary transition-colors">TikTok</a>
                 <a href="#" class="text-slate-400 hover:text-primary transition-colors">GoFood</a>
@@ -332,11 +318,12 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize Animations
         AOS.init({
-            duration: 1000,
+            duration: 800,
             once: true,
-            offset: 100
+            offset: 50,
+            // Menonaktifkan animasi samping di mobile untuk mencegah layout bocor
+            disable: window.innerWidth < 768 
         });
     </script>
 </body>
